@@ -11,6 +11,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
+
 @RequiredArgsConstructor
 @Service
 public class CouponIssueService {
@@ -37,6 +39,7 @@ public class CouponIssueService {
         CouponIssue couponIssue = CouponIssue.builder()
                 .couponId(couponId)
                 .userId(userId)
+                .dateIssued(LocalDateTime.now())
                 .build();
 
         return couponIssueJpaRepository.save(couponIssue);

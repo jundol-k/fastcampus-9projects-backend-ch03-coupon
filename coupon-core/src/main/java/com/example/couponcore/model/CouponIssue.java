@@ -34,6 +34,7 @@ public class CouponIssue extends BaseTimeEntity{
     @Column(nullable = false)
     private Long userId;
 
+    @Column(nullable = false)
     private LocalDateTime dateIssued;
 
     private LocalDateTime dateUsed;
