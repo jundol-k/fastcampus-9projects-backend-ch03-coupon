@@ -3,10 +3,10 @@ services:
   master:
     image:  locustio/locust
     ports:
-      - "8089:8089"
+      - "9099:8089"
     volumes:
       - ./:/mnt/locust
-    command: -f /mnt/locust/locustfile-issueV1.py --master -H http://host.docker.internal:8080
+    command: -f /mnt/locust/locustfile-issueV1.py --master -H http://host.docker.internal:9090
 
   worker:
     image: locustio/locust
