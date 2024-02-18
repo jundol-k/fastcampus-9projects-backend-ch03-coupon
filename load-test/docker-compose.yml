@@ -6,11 +6,11 @@ services:
       - "9099:8089"
     volumes:
       - ./:/mnt/locust
-    command: -f /mnt/locust/locustfile-async-issueV1.py --master -H http://host.docker.internal:9090
+    command: -f /mnt/locust/locustfile-async-issueV2.py --master -H http://host.docker.internal:9090
 
   worker:
     image: locustio/locust
     volumes:
       - ./:/mnt/locust
-    command: -f /mnt/locust/locustfile-async-issueV1.py --worker --master-host master
+    command: -f /mnt/locust/locustfile-async-issueV2.py --worker --master-host master
 
