@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 
     // set을 이용한 방법
     public void issue(long couponId, long userId) {
-        CouponRedisEntity coupon = couponCacheService.getCouponCache(couponId);
+        CouponRedisEntity coupon = couponCacheService.getCouponLocalCache(couponId);
         coupon.checkIssuableCoupon();
         issueRequest(couponId, userId, coupon.totalQuantity());
     }
